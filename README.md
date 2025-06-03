@@ -1,3 +1,13 @@
+```
+PlataformaRecrutamento/
+│
+├── README.md
+├── recrutamento.py
+├── .gitignore
+└── LICENSE
+```
+
+
 # 🚀 Plataforma de Recursos Humanos e Recrutamento
 
 Este projeto simula uma plataforma simples de recrutamento, integrando funcionalidades de **busca** 🔍 e **ordenação** 📊 para facilitar a triagem de candidatos com base em critérios diversos. É uma ferramenta para agilizar e otimizar processos seletivos.

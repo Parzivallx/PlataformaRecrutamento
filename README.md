@@ -56,8 +56,10 @@ for c in ordenados:
 Este projeto foi desenvolvido e mantido pelos alunos do curso de Engenharia de Software do Centro Universitário do Distrito Federal (UDF), com conhecimentos
 desenvolvidos na disciplina de Estrutura de Dados.
 
--Letícia Castro de Souza.  
--Emmanuel Ferreira Gomes.  
--Lucas Eduardo Barreto de Oliveira.  
--João Pedro Reis Rios.  
--Júlio Brenno Lopes Tavares.
+```
+-Letícia Castro de Souza  
+-Emmanuel Ferreira Gomes  
+-Lucas Eduardo Barreto de Oliveira  
+-João Pedro Reis Rios  
+-Júlio Brenno Lopes Tavares
+```

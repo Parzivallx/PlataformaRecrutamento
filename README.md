@@ -50,6 +50,9 @@ ordenados = ordenar_candidatos(filtrados, criterio="score", requisitos=requisito
 for c in ordenados:
     print(c)
 
+
+
+
 ## 👥 Colaboradores
 Este projeto foi desenvolvido e mantido pelos alunos do curso de Engenharia de Software do Centro Universitário do Distrito Federal (UDF), com conhecimentos
 desenvolvidos na disciplina de Estrutura de Dados.

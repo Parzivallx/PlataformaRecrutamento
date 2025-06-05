@@ -1,7 +1,7 @@
 
 # 📄 Explicação do Arquivo `recrutamento.py`
 
-Este script simula uma plataforma simples de **recrutamento e seleção de candidatos**, com foco em busca 🔍 e ordenação 📊 de perfis com base em critérios comuns no mercado de RH.
+Este script simula uma plataforma simples de **recrutamento e seleção de candidatos**, com foco em **busca** e **ordenação** de perfis com base em critérios comuns no mercado de Recursos Humanos.
 
 ---
 
@@ -17,18 +17,18 @@ class Candidato:
 ```
 
 **Atributos:**
-- `nome`: Nome completo do candidato
-- `habilidades`: Lista de habilidades técnicas (ex: `["Python", "SQL"]`)
-- `formacao`: Curso superior do candidato
-- `localizacao`: Estado ou cidade (ex: `"SP"`)
-- `experiencia`: Tempo de experiência em anos
-- `data_candidatura`: Data da candidatura no formato `YYYY-MM-DD`
-- `resumo`: Texto descritivo com perfil profissional
+- `nome`: Nome completo do candidato.
+- `habilidades`: Lista de habilidades técnicas (ex: `["Python", "SQL"]`).
+- `formacao`: Curso superior do candidato.
+- `localizacao`: Estado ou cidade (ex: `"SP"`).
+- `experiencia`: Tempo de experiência em anos.
+- `data_candidatura`: Data da candidatura no formato `YYYY-MM-DD`.
+- `resumo`: Texto descritivo com perfil profissional.
 
 **Métodos:**
-- `match_relevancia`: Conta quantas habilidades do candidato coincidem com os requisitos da vaga
-- `score_adequacao`: Calcula um score de compatibilidade, com peso em habilidades e experiência
-- `__repr__`: Representação em texto ao imprimir o candidato
+- `match_relevancia`: Conta quantas habilidades do candidato coincidem com os requisitos da vaga.
+- `score_adequacao`: Calcula um score de compatibilidade, com peso em habilidades e experiência.
+- `__repr__`: Representação em texto ao imprimir o candidato.
 
 ---
 
@@ -60,10 +60,10 @@ def ordenar_candidatos(candidatos: List[Candidato], criterio="relevancia", ...)
 ```
 
 Ordena a lista de candidatos com base em:
-- `"experiencia"`: mais experientes primeiro
-- `"data"`: por ordem de candidatura
-- `"score"`: usando a fórmula `relevância * 10 + experiência`
-- `"relevancia"`: habilidades que batem com a vaga
+- `"experiencia"`: mais experientes primeiro.
+- `"data"`: por ordem de candidatura.
+- `"score"`: usando a fórmula `relevância * 10 + experiência`.
+- `"relevancia"`: habilidades que batem com a vaga.
 
 **Exemplo:**
 
@@ -90,10 +90,9 @@ ordenados = ordenar_candidatos(...)
 ## 🧠 Objetivo
 
 Este script pode ser o ponto de partida para:
-- Sistemas de triagem de currículos
-- Ferramentas de recrutamento automatizadas
-- Treinamento de modelos de IA com perfis fictícios
+- Sistemas de triagem de currículos.
+- Ferramentas de recrutamento automatizadas.
+- Treinamento de modelos de IA com perfis fictícios.
 
 ---
 
-✍️ Criado como exemplo de projeto para estudos acadêmicos e técnicos.

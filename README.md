@@ -8,13 +8,13 @@ PlataformaRecrutamento/
 ```
 
 
-# 🚀 Plataforma de Recursos Humanos e Recrutamento:
+# 🚀 Plataforma de Recursos Humanos e Recrutamento
 
 Este projeto simula uma plataforma simples de recrutamento, integrando funcionalidades de **busca** e **ordenação** para facilitar a triagem de candidatos com base em critérios diversos. É uma ferramenta para agilizar e otimizar processos seletivos.
 
-## ✨ Funcionalidades:
+## ✨ Funcionalidades
 
-### 🔍 Busca:
+### 🔍 Busca
 Recrutadores podem buscar candidatos na base de dados aplicando filtros como:  
 - **Habilidades** (ex: Python, Java, SQL).
 - **Experiência profissional** mínima em anos.
@@ -22,14 +22,14 @@ Recrutadores podem buscar candidatos na base de dados aplicando filtros como:
 - **Localização geográfica** (ex: SP, RJ).
 - **Palavras-chave no currículo** ou resumo profissional.
 
-### 📊 Ordenação:  
+### 📊 Ordenação
 Após a busca, os candidatos encontrados podem ser ordenados por:  
 - **Relevância**: quantidade de habilidades que batem com os requisitos da vaga.
 - **Anos de experiência**.
 - **Data da candidatura** (mais recente ou mais antiga).
 - **Score de adequação**: uma combinação do match de habilidades com a experiência, configurável para definir candidatos mais alinhados.
 
-### 🤝 Sinergia entre Busca e Ordenação:  
+### 🤝 Sinergia entre Busca e Ordenação 
 A busca retorna um pool de candidatos que atendem aos critérios básicos, e a ordenação classifica esse grupo para que o recrutador foque primeiro nos perfis mais promissores, tornando o processo de seleção mais eficiente.
 
 ## ⚙️ Como usar?
@@ -40,7 +40,7 @@ A busca retorna um pool de candidatos que atendem aos critérios básicos, e a o
 4. **Ordenar candidatos:** usa-se `ordenar_candidatos` para ordenar os resultados pelo critério que preferir.  
 5. **Visualizar resultados:** imprimir ou manipular a lista final de candidatos ordenados.
 
-## 💻 Exemplo rápido:
+## 💻 Exemplo rápido
 
 ```python
 requisitos_vaga = ["Python", "SQL"]

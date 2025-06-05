@@ -10,7 +10,7 @@ PlataformaRecrutamento/
 
 # 🚀 Plataforma de Recursos Humanos e Recrutamento
 
-Este projeto simula uma plataforma simples de recrutamento, integrando funcionalidades de **busca** 🔍 e **ordenação** 📊 para facilitar a triagem de candidatos com base em critérios diversos. É uma ferramenta para agilizar e otimizar processos seletivos.
+Este projeto simula uma plataforma simples de recrutamento, integrando funcionalidades de **busca** e **ordenação** para facilitar a triagem de candidatos com base em critérios diversos. É uma ferramenta para agilizar e otimizar processos seletivos.
 
 ## ✨ Funcionalidades
 
@@ -32,7 +32,7 @@ Após a busca, os candidatos encontrados podem ser ordenados por:
 ### 🤝 Sinergia entre Busca e Ordenação  
 A busca retorna um pool de candidatos que atendem aos critérios básicos, e a ordenação classifica esse grupo para que o recrutador foque primeiro nos perfis mais promissores, tornando o processo de seleção mais eficiente.
 
-## ⚙️ Como usar
+## ⚙️ Como usar?
 
 1. **Configurar candidatos:** no arquivo `recrutamento.py` há uma lista simulada de candidatos para teste.  
 2. **Definir filtros:** no script principal, especifique os requisitos da vaga (habilidades, localização, etc).  

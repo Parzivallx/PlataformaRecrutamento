@@ -57,7 +57,7 @@ Este projeto foi desenvolvido e mantido pelos alunos do curso de Engenharia de S
 desenvolvidos na disciplina de Estrutura de Dados.
 
 ```
-|Letícia Castro de Souza  
+|Letícia Castro de Souz  
 |Emmanuel Ferreira Gomes  
 |Lucas Eduardo Barreto de Oliveira  
 |João Pedro Reis Rios  

@@ -1,24 +1,33 @@
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 
 class Candidato:
     def __init__(self, nome, habilidades, formacao, localizacao, experiencia, data_candidatura, resumo):
         self.nome = nome
-        self.habilidades = habilidades  # lista de habilidades
+        self.habilidades = [h.lower() for h in habilidades]  # normaliza
         self.formacao = formacao
         self.localizacao = localizacao
         self.experiencia = experiencia  # em anos
-        self.data_candidatura = datetime.strptime(data_candidatura, "%Y-%m-%d")
+        try:
+            self.data_candidatura = datetime.strptime(data_candidatura, "%Y-%m-%d")
+        except ValueError:
+            raise ValueError(f"Data inválida para {nome}. Use o formato YYYY-MM-DD.")
         self.resumo = resumo
 
-    def match_relevancia(self, requisitos):
-        return len([h for h in requisitos if h in self.habilidades])
+    def match_relevancia(self, requisitos: List[str]) -> int:
+        return len([h for h in requisitos if h.lower() in self.habilidades])
 
-    def score_adequacao(self, requisitos):
+    def score_adequacao(self, requisitos: List[str]) -> int:
         return self.match_relevancia(requisitos) * 10 + self.experiencia
 
     def __repr__(self):
         return f"{self.nome} | {self.localizacao} | {self.experiencia} anos | {self.data_candidatura.date()}"
+
+    def __str__(self):
+        return (
+            f"{self.nome}, {self.formacao} ({self.localizacao}) - {self.experiencia} anos de experiência.\n"
+            f"Data da candidatura: {self.data_candidatura.date()}\nResumo: {self.resumo}\n"
+        )
 
 
 # Lista de candidatos simulada
@@ -32,10 +41,20 @@ candidatos = [
 
 
 # Função de busca com filtros
-def buscar_candidatos(candidatos: List[Candidato], requisitos: List[str] = [],
-                       formacao: str = None, localizacao: str = None,
-                       experiencia_min: int = 0, palavra_chave: str = None):
+def buscar_candidatos(
+    candidatos: List[Candidato],
+    requisitos: Optional[List[str]] = None,
+    formacao: Optional[str] = None,
+    localizacao: Optional[str] = None,
+    experiencia_min: int = 0,
+    palavra_chave: Optional[str] = None
+):
+    if requisitos is None:
+        requisitos = []
+
+    requisitos = [r.lower() for r in requisitos]
     resultado = []
+
     for c in candidatos:
         if requisitos and not any(r in c.habilidades for r in requisitos):
             continue
@@ -48,30 +67,47 @@ def buscar_candidatos(candidatos: List[Candidato], requisitos: List[str] = [],
         if palavra_chave and palavra_chave.lower() not in c.resumo.lower():
             continue
         resultado.append(c)
+
     return resultado
 
 
-# Função de ordenação
-def ordenar_candidatos(candidatos: List[Candidato], criterio: str = "relevancia", requisitos: List[str] = []):
-    if criterio == "experiencia":
-        return sorted(candidatos, key=lambda c: c.experiencia, reverse=True)
-    elif criterio == "data":
-        return sorted(candidatos, key=lambda c: c.data_candidatura)
-    elif criterio == "score":
-        return sorted(candidatos, key=lambda c: c.score_adequacao(requisitos), reverse=True)
-    else:  # relevancia (padrão)
-        return sorted(candidatos, key=lambda c: c.match_relevancia(requisitos), reverse=True)
+# Função de ordenação com múltiplos critérios
+def ordenar_candidatos(
+    candidatos: List[Candidato],
+    criterios: List[str],
+    requisitos: Optional[List[str]] = None
+):
+    if requisitos is None:
+        requisitos = []
+
+    requisitos = [r.lower() for r in requisitos]
+
+    def chave(c: Candidato):
+        valores = []
+        for crit in criterios:
+            if crit == "experiencia":
+                valores.append(-c.experiencia)
+            elif crit == "data":
+                valores.append(c.data_candidatura)
+            elif crit == "score":
+                valores.append(-c.score_adequacao(requisitos))
+            elif crit == "relevancia":
+                valores.append(-c.match_relevancia(requisitos))
+        return tuple(valores)
+
+    return sorted(candidatos, key=chave)
 
 
 # Exemplo de uso
 if __name__ == "__main__":
     requisitos_vaga = ["Python", "SQL"]
+
     print("--- Candidatos encontrados ---")
     filtrados = buscar_candidatos(candidatos, requisitos=requisitos_vaga, localizacao="SP")
     for c in filtrados:
         print(c)
 
-    print("\n--- Ordenados por score de adequação ---")
-    ordenados = ordenar_candidatos(filtrados, criterio="score", requisitos=requisitos_vaga)
+    print("\n--- Ordenados por score de adequação e data ---")
+    ordenados = ordenar_candidatos(filtrados, criterios=["score", "data"], requisitos=requisitos_vaga)
     for c in ordenados:
-        print(c)
+        print(str(c))

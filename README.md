@@ -54,7 +54,7 @@ for c in ordenados:
 
 ## 👥 Colaboradores
 Este projeto foi desenvolvido e mantido pelos alunos do curso de Engenharia de Software do Centro Universitário do Distrito Federal (UDF), com conhecimentos
-desenvolvidos na disciplina de Estrutura de Dados
+desenvolvidos na disciplina de Estrutura de Dados.
 
 ```
 |Letícia Castro de Souza  

@@ -20,7 +20,7 @@ Recrutadores podem buscar candidatos na base de dados aplicando filtros como:
 - **Experiência profissional** mínima em anos.
 - **Formação acadêmica** (ex: Engenharia, Ciência da Computação).
 - **Localização geográfica** (ex: SP, RJ).
-- **Palavras-chave no currículo** ou resumo profissional
+- **Palavras-chave no currículo** ou resumo profissional.
 
 ### 📊 Ordenação
 Após a busca, os candidatos encontrados podem ser ordenados por:  

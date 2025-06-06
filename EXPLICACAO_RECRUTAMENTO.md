@@ -92,7 +92,7 @@ ordenados = ordenar_candidatos(...)
 Este script pode ser o ponto de partida para:
 - Sistemas de triagem de currículos.
 - Ferramentas de recrutamento automatizadas.
-- Treinamento de modelos de IA com perfis fictícios
+- Treinamento de modelos de IA com perfis fictícios.
 
 ---
 
